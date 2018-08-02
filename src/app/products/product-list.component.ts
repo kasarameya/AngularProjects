@@ -92,4 +92,8 @@ export class ListOfProductsComponent implements OnInit{
     toggleImageStatus():void {
         this.imageDisplayed = !this.imageDisplayed;
     }
+
+    reflectStarClick(text: string):void{
+        this.pageTitle = text;
+    }
 }

@@ -5,12 +5,14 @@ import {FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { ListOfProductsComponent } from './products/product-list.component';
 import { ReplaceToSpaces } from './shared/replace-tospaces.pipe';
+import { StarRating } from './shared/star.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListOfProductsComponent,
-    ReplaceToSpaces
+    ReplaceToSpaces,
+    StarRating
   ],
   imports: [
     BrowserModule,

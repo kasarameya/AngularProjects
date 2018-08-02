@@ -41,7 +41,8 @@
               <td>{{singleProduct.productCode | lowercase | ReplaceToSpaces : '-'}}</td>
               <td>{{singleProduct.releaseDate}}</td>
               <td>{{singleProduct.price | currency: 'USD':'symbol':'1.2-2'}}</td>
-              <td>{{singleProduct.starRating}}</td>
+              <td><sl-ratings [rating] = 'singleProduct.starRating'
+                (starClicked) = 'reflectStarClick($event)'></sl-ratings></td>
             </tr>
           </thead>
           <tbody>
