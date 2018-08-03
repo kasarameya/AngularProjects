@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListOfProductsComponent } from './products/product-list.component';
 import { ReplaceToSpaces } from './shared/replace-tospaces.pipe';
 import { StarRating } from './shared/star.component';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { StarRating } from './shared/star.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

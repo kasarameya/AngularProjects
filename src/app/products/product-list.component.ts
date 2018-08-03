@@ -10,7 +10,13 @@ import { ProductsService } from "./product.service";
 
 export class ListOfProductsComponent implements OnInit{
     ngOnInit(): void {
-        this.allProducts = this.productsService.getProducts();
+        this.productsService.getProducts().subscribe(
+            products => {
+            this.allProducts = products;
+            this.searchedProducts = products;
+        },
+            error => this.errorText = <any> error
+        );
         this.searchedProducts = this.allProducts;
         console.log("Inside init");
     } 
@@ -19,6 +25,7 @@ export class ListOfProductsComponent implements OnInit{
     imgMargin: number = 2;
     imageDisplayed:boolean = false;
     _textFilter : string = 'kk';
+    errorText:string;
     searchedProducts : IProduct[];
     allProducts: IProduct[];
 
