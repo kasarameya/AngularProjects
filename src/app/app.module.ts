@@ -7,7 +7,10 @@ import { ListOfProductsComponent } from './products/product-list.component';
 import { ReplaceToSpaces } from './shared/replace-tospaces.pipe';
 import { StarRating } from './shared/star.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ProductDetailComponent } from './products/product-detail/product-detail.component'
+import { ProductDetailComponent } from './products/product-detail.component';
+import { WelcomeComponent } from './home/welcome.component'
+import {RouterModule} from '@angular/router'
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,21 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
     ListOfProductsComponent,
     ReplaceToSpaces,
     StarRating,
-    ProductDetailComponent
+    ProductDetailComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: 'productList', component :ListOfProductsComponent},
+      {path: 'productDetail/:id', component: ProductDetailComponent},
+      {path: 'welcome', component: WelcomeComponent},
+      {path: '',redirectTo:'welcome',pathMatch:'full'},
+      {path:'**',redirectTo: 'welcome',pathMatch:'full'}
+
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

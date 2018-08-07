@@ -4,7 +4,6 @@ import { ProductsService } from "./product.service";
 
 
 @Component({
-    selector : 'pl-products',
     templateUrl : './product-list.component.html'
 })
 
