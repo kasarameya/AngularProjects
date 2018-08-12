@@ -15,7 +15,7 @@ export class ListOfProductsComponent implements OnInit{
         this.searchedProducts = this.allProducts;
     } 
     pageTitle : string = 'My Product List';
-    imgWidth : number = 50;
+    imgWidth : number = 48;
     imgMargin: number = 2;
     imageDisplayed:boolean = false;
     _textFilter : string = 'kk';
