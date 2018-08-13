@@ -37,7 +37,7 @@
                 [title] = 'singleProduct.productName'
                 [style.width.px] = 'imgWidth'
                 [style.width.style] = 'imgMargin'></td>
-              <td>{{singleProduct.productName}}</td>
+              <td> <a [routerLink] = "['/productDetail',singleProduct.productId]" >{{singleProduct.productName}}</a></td>
               <td>{{singleProduct.productCode | lowercase | ReplaceToSpaces : '-'}}</td>
               <td>{{singleProduct.releaseDate}}</td>
               <td>{{singleProduct.price | currency: 'USD':'symbol':'1.2-2'}}</td>
